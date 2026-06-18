@@ -1,0 +1,25 @@
+{
+    "frameworks": [
+        {
+            "id": 1,
+            "name": "Vue",
+            "tipo": "framework"
+        },
+        {
+            "id": 2,
+            "name": "Angular",
+            "tipo": "framework"
+        },
+        {
+            "id": 3,
+            "name": "React",
+            "tipo": "framework"
+        },
+        {
+            "id": 4,
+            "name": "Express",
+            "tipo": "Backend"
+        }
+
+    ]
+}
