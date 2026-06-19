@@ -40,7 +40,22 @@ const iniciarSesion = async () => {
 
 
 <template>
-  <div>
+  
+  
+  <nav
+    v-if="authStore.autenticado"
+  class="d-flex justify-content-end bg-dark">
+    <router-link to="/dashboard" class="btn btn-sm btn-primary m-2">
+      dashboard
+    </router-link>
+  </nav>
+
+
+
+  <div class="container">
+    
+
+
     <h1>Login</h1>
     
     <form @submit.prevent="iniciarSesion">
@@ -56,14 +71,12 @@ const iniciarSesion = async () => {
       > <br>
     
       <button
-        
+        :disabled="authStore.cargando"
         class="btn btn-primary m-2" type="submit">
-        Login
+        {{ authStore.cargando ? 'Cargando...' : 'Iniciar Sesión' }}
       </button>
     </form>
+    <p>{{ authStore.error }}</p>
   </div>
 </template>
 
-<style scoped>
-
-</style>

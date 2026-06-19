@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LoginView from '../views/LoginView.vue'
-import DashboardView from '../views/DashboardView.vue'
+import LoginView from '@/views/LoginView.vue'
+import DashboardView from '@/views/DashboardView.vue'
 
 import { useAuthStore } from '@/stores/authStore'
 
@@ -37,12 +37,13 @@ router.beforeEach((to) => {
     const authStore = useAuthStore()
 
     const requieresAuth = to.matched.some(
-        route => route.meta.requiresAuth
+        (route) => route.meta.requiresAuth
     )
-
 
     if (requieresAuth && !authStore.isAutenticado){
         return { name: 'login' }
     }
 })
+
+
 export default router;

@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { FALSE } from 'sass'
 import { ref, computed } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
